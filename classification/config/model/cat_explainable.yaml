@@ -1,0 +1,47 @@
+name: CATExplainable
+output_logits: 1
+meta:
+  depth: 6 # This defines the length of the cat chain
+  fourier_encode_data: True
+  final_classifier_head: True
+  deep_supervision: False
+  use_dropout: False
+  p_do: 0.0
+  self_supervision:
+    use: False
+    num_features: 1000
+    cat_module:
+      depth: 1
+      latent_heads: 4
+      latent_dim_head: 32
+      attn_dropout: 0.
+      ff_dropout: 0.
+      weight_tie_layers: False
+      self_per_cross_attn: 1
+      cross_heads: 1
+      cross_dim_head: 64
+  feats_module:
+    num_freq_bands: 6
+    max_freq: 10
+    input_channels: 2048
+    input_axis: 1
+    num_latents: 128 # Choose a number divisible by 2
+    min_num_latents: 8
+    compression_factor: 2
+    use_skip_connection: False
+  cat_module:
+    depth: 1
+    latent_dim: 128
+    latent_heads: 4
+    latent_dim_head: 32
+    attn_dropout: 0.
+    ff_dropout: 0.
+    weight_tie_layers: False
+    self_per_cross_attn: 1
+    cross_heads: 1
+    cross_dim_head: 64
+  
+
+
+
+

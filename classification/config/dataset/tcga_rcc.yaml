@@ -1,0 +1,9 @@
+name: TCGA-RCC
+root_path: /data/TCGA_RCC/ # Replace this with your own path linking to the TCGA_RCC directory
+null_token: -10
+augment:
+  do_augment: False
+  p_augment: 0.5
+  p_hflip: 0.5
+  p_vflip: 0.5
+  p_transpose: 0.5
